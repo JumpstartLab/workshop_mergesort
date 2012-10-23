@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 
-class QuickSort ; end
+class MergeSort ; end
 
-describe QuickSort do
+describe MergeSort do
   it "should be tested"
 end

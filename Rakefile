@@ -5,45 +5,45 @@ end
 
 desc "Run the ruby example"
 task :ruby do
-  puts `ruby ruby/quicksort.rb`
+  puts `ruby ruby/mergesort.rb`
 end
 
 desc "Run the coffeescript example"
 task :coffee do
   check_application_is_ready! 'coffee'
-  puts `coffee coffeescript/quicksort.coffee`
+  puts `coffee coffeescript/mergesort.coffee`
 end
 
 desc "Run the javascript example"
 task :node do
   check_application_is_ready! 'node'
-  puts `node node/quicksort.js`
+  puts `node node/mergesort.js`
 end
 
 desc "Compile and run the Scala example"
 task :scala do
   check_application_is_ready! 'scalac'
   check_application_is_ready! 'scala'
-  puts `scalac -d scala scala/QuickSort.scala`
-  puts `scala -classpath scala QuickSort`
+  puts `scalac -d scala scala/MergeSort.scala`
+  puts `scala -classpath scala MergeSort`
 end
 
 desc "Run the Clojure example"
 task :clojure do
   check_application_is_ready! 'clj'
-  puts `clj clojure/quicksort.clj`
+  puts `clj clojure/mergesort.clj`
 end
 
 namespace :ruby do
   desc "Run the ruby - mini test example"
   task :minitest do
-    puts `ruby ruby/quicksort_minitest.rb`
+    puts `ruby ruby/mergesort_minitest.rb`
   end
 
   desc "Run the ruby - rspec example"
   task :rspec do
     check_application_is_ready! 'rspec'
-    puts `rspec -c ruby/quicksort_spec.rb`
+    puts `rspec -c ruby/mergesort_spec.rb`
   end
 end
 
