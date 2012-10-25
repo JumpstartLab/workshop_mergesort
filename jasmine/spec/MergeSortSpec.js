@@ -19,6 +19,14 @@ describe("MergeSort", function () {
     expect(new MergeSort().sort([3, 2, 1])).toEqual([1, 2, 3]);
   });
 
+  it("should sort unsorted four element list", function () {
+    expect(new MergeSort().sort([3, 4, 2, 1])).toEqual([1, 2, 3, 4]);
+  });
+
+  it("should sort unsorted 5 element list", function () {
+    expect(new MergeSort().sort([3, 5, 4, 2, 1])).toEqual([1, 2, 3, 4, 5]);
+  });
+
   describe("merge", function () {
     it("should merge two inner arrays together", function () {
       var array = [
