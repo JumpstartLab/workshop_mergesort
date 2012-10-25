@@ -9,15 +9,18 @@ MergeSort.prototype = {
       workArray.push([list[i]])
     }
 
-    var i = 0;
-    while (i < workArray.length) {
-      var j = Math.min(workArray.length - 1, i + 1);
+    while (workArray.length > 1) {
+      var i = 0;
+      while (i < workArray.length) {
+        var j = Math.min(workArray.length - 1, i + 1);
 
-      if (workArray[i] > workArray[j]) {
-        this.swap(workArray, i, j);
+        if (workArray[i][0] > workArray[j][0]) {
+          this.swap(workArray, i, j);
+        }
+        var inc = this.merge(workArray, i, j);
+
+        i = j + 1 + inc;
       }
-
-      i = j + 1;
     }
 
     return this.flatten(workArray);
@@ -29,13 +32,22 @@ MergeSort.prototype = {
     array[i] = temp;
   },
 
+  merge:function (array, i, j) {
+    if (i != j) {
+      array[i] = array[i].concat(array[j]);
+      array.splice(j, 1);
+      return -1;
+    } else {
+      return 0;
+    }
+  },
+
   flatten:function (array) {
     if (array.length > 0) {
       return array.reduce(function (a, b) {
         return a.concat(b);
       });
-    }
-    else {
+    } else {
       return array;
     }
   }
