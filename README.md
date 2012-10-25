@@ -4,21 +4,31 @@
 
 ~ [Wikipedia](http://en.wikipedia.org/wiki/Merge_sort)
 
+## Facilitating
+
+See the instructions for facilitating this workshop session at http://tutorials.jumpstartlab.com/academy/workshops/merge-sort.html
+
 # Paths
 
 ## Languages
 
+We've setup some stubs to get you started with different languages.
+
 ### Ruby
+
+Assuming you already have Ruby installed, run the Ruby stubs with:
 
 ```bash
 rake ruby
 ```
 
-### Javascript (node)
+### Javascript (node.js)
 
-1. Install Node.js
+First, install Node.js using Homebrew:
 
     > brew install node
+
+Then run the stubs:
 
 ```bash
 rake node
@@ -26,13 +36,12 @@ rake node
 
 ### Coffeescript
 
-1. Install Node.js
+Install Node.js and CoffeeScript
 
     > brew install node
-
-2. Install coffeescript
-
     > npm install -g coffee-script
+
+Then run the CoffeeScript stubs:
 
 ```bash
 rake coffee
@@ -40,9 +49,11 @@ rake coffee
 
 ### Scala
 
-1. Install Scala
+Install Scala via homebrew:
 
     > brew install scala
+
+Then run the stubs:
 
 ```bash
 rake scala
@@ -50,9 +61,11 @@ rake scala
 
 ### Clojure
 
-1. Install Clojure
+Install Clojure via homebrew:
 
     > brew install clojure
+
+Then run the stubs:
 
 ```bash
 rake clojure
@@ -77,6 +90,8 @@ rake ruby:rspec
 [Jasmine](https://github.com/pivotal/jasmine) is a JavaScript Testing Framework
 
 > Jasmine is a Behavior Driven Development testing framework for JavaScript. It does not rely on browsers, DOM, or any JavaScript framework. Thus it's suited for websites, Node.js projects, or anywhere that JavaScript can run.
+
+We've already setup Jasmine for you in this repo, so you can just run:
 
 ```bash
 rake jasmine
