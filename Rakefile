@@ -19,23 +19,6 @@ def init_from_template(project)
   STDOUT.puts "Setup template for #{project} in #{target}"
 end
 
-desc "Run the ruby example"
-task :ruby do
-  puts `ruby ruby/mergesort.rb`
-end
-
-desc "Run the coffeescript example"
-task :coffee do
-  check_application_is_ready! 'coffee'
-  puts `coffee coffeescript/mergesort.coffee`
-end
-
-desc "Run the javascript example"
-task :node do
-  check_application_is_ready! 'node'
-  puts `node node/mergesort.js`
-end
-
 desc "Compile and run the Scala example"
 task :scala do
   check_application_is_ready! 'scalac'
@@ -51,15 +34,29 @@ task :clojure do
 end
 
 namespace :ruby do
-  desc "Run the ruby - mini test example"
-  task :minitest do
-    puts `ruby ruby/mergesort_minitest.rb`
+  namespace :minitest do
+    desc "Run the Ruby/MiniTest tests"
+    task :run do
+      puts `ruby ruby/minitest/solutions/#{username}/mergesort_minitest.rb`
+    end
+
+    desc "Setup for Ruby/MiniTest work"
+    task :init do
+      init_from_template('ruby/minitest')
+    end
   end
 
-  desc "Run the ruby - rspec example"
-  task :rspec do
-    check_application_is_ready! 'rspec'
-    puts `rspec -c ruby/mergesort_spec.rb`
+  namespace :rspec do
+    desc "Run the ruby - rspec example"
+    task :rspec do
+      check_application_is_ready! 'rspec'
+      puts `rspec -c ruby/rspec/solutions/#{username}/mergesort_spec.rb`
+    end
+
+    desc "Setup for Ruby/RSpec work"
+    task :init do
+      init_from_template('ruby/rspec')
+    end
   end
 end
 
@@ -74,6 +71,18 @@ namespace :js do
     task :run do
       `open jasmine/solutions/#{username}/SpecRunner.html`
     end
+  end
+
+  desc "Run the coffeescript example"
+  task :coffee do
+    check_application_is_ready! 'coffee'
+    puts `coffee coffeescript/mergesort.coffee`
+  end
+
+  desc "Run the javascript example"
+  task :node do
+    check_application_is_ready! 'node'
+    puts `node node/mergesort.js`
   end
 end
 
