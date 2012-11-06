@@ -1,4 +1,4 @@
-require './merge'
+require_relative '../merge'
 
 describe "Merge Sort" do
   it "exists" do

@@ -1,4 +1,9 @@
 source :rubygems
 gem 'rake'
-gem 'minitest'
-gem 'rspec'
+
+group :ruby do
+  gem 'minitest'
+  gem 'rspec'
+  gem 'guard'
+  gem 'guard-rspec'
+end

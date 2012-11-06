@@ -48,9 +48,9 @@ namespace :ruby do
 
   namespace :rspec do
     desc "Run the ruby - rspec example"
-    task :rspec do
+    task :run do
       check_application_is_ready! 'rspec'
-      puts `rspec -c ruby/rspec/solutions/#{username}/mergesort_spec.rb`
+      puts `rspec -c ruby/rspec/solutions/#{username}/spec/mergesort_spec.rb`
     end
 
     desc "Setup for Ruby/RSpec work"
