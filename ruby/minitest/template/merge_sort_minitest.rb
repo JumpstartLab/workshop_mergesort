@@ -1,6 +1,5 @@
 require 'minitest/autorun'
-
-class MergeSort ; end
+require_relative './merge_sort'
 
 describe MergeSort do
   it "should be tested"

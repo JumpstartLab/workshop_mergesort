@@ -37,7 +37,7 @@ namespace :ruby do
   namespace :minitest do
     desc "Run the Ruby/MiniTest tests"
     task :run do
-      puts `ruby ruby/minitest/solutions/#{username}/mergesort_minitest.rb`
+      puts `ruby ruby/minitest/solutions/#{username}/merge_sort_minitest.rb`
     end
 
     desc "Setup for Ruby/MiniTest work"
