@@ -16,13 +16,56 @@ We've setup some stubs to get you started with different languages.
 
 ### Ruby
 
-Assuming you already have Ruby installed, run the Ruby stubs with:
+#### Ruby with MiniTest
+
+Initialize your own copy of the project:
 
 ```bash
-rake ruby
+rake ruby:minitest:init AUTHOR=your_github_username
 ```
 
-### Javascript (node.js)
+Then run the tests:
+
+```bash
+rake ruby:minitest:run AUTHOR=your_github_username
+```
+
+#### Ruby with RSpec
+
+Initialize your own copy of the project:
+
+```bash
+rake ruby:rspec:init AUTHOR=your_github_username
+```
+
+Then run the tests:
+
+```bash
+rake ruby:rspec:run AUTHOR=your_github_username
+```
+
+### Javascript 
+
+#### Pure JavaScript with Jasmine
+
+[Jasmine](https://github.com/pivotal/jasmine) is a JavaScript Testing Framework
+
+> Jasmine is a Behavior Driven Development testing framework for JavaScript. It does not rely on browsers, DOM, or any JavaScript framework. Thus it's suited for websites, Node.js projects, or anywhere that JavaScript can run.
+
+Initialize your own copy of the project:
+
+```bash
+rake js:jasmine:init AUTHOR=your_github_username
+```
+
+Then run/open the specs:
+
+```bash
+rake js:jasmine:run AUTHOR=your_github_username
+```
+
+
+#### Node.js
 
 First, install Node.js using Homebrew:
 
@@ -34,7 +77,7 @@ Then run the stubs:
 rake node
 ```
 
-### Coffeescript
+#### Coffeescript
 
 Install Node.js and CoffeeScript
 
@@ -69,36 +112,4 @@ Then run the stubs:
 
 ```bash
 rake clojure
-```
-
-## Test Driven Paths
-
-### Ruby with MiniTest
-
-```bash
-rake ruby:minitest
-```
-
-### Ruby with RSpec
-
-```bash
-rake ruby:rspec
-```
-
-### Javascript with Jasmine
-
-[Jasmine](https://github.com/pivotal/jasmine) is a JavaScript Testing Framework
-
-> Jasmine is a Behavior Driven Development testing framework for JavaScript. It does not rely on browsers, DOM, or any JavaScript framework. Thus it's suited for websites, Node.js projects, or anywhere that JavaScript can run.
-
-Initialize your own copy of the project:
-
-```bash
-rake js:jasmine:init AUTHOR=jcasimir
-```
-
-Then run/open the specs:
-
-```bash
-rake js:jasmine:run AUTHOR=jcasimir
 ```
