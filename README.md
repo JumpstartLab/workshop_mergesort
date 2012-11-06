@@ -91,8 +91,14 @@ rake ruby:rspec
 
 > Jasmine is a Behavior Driven Development testing framework for JavaScript. It does not rely on browsers, DOM, or any JavaScript framework. Thus it's suited for websites, Node.js projects, or anywhere that JavaScript can run.
 
-We've already setup Jasmine for you in this repo, so you can just run:
+Initialize your own copy of the project:
 
 ```bash
-rake jasmine
+rake js:jasmine:init AUTHOR=jcasimir
+```
+
+Then run/open the specs:
+
+```bash
+rake js:jasmine:run AUTHOR=jcasimir
 ```

@@ -3,6 +3,22 @@ def check_application_is_ready!(name)
   puts "WARNING: `#{name}` does not appear to be installed!" if app_installed == ""
 end
 
+def username
+  ENV['AUTHOR'] || begin
+    STDOUT.puts "Specify your name when executing the rake task, like this:"
+    STDOUT.puts "  rake js:jasmine:run AUTHOR=chrismo"
+    STDOUT.puts "Or enter your github username (ex: jcasimir OR jcasimir_jessabean for a pair) here:"
+    STDIN.gets.chomp.strip.downcase
+  end
+end
+
+def init_from_template(project)
+  FileUtils.mkdir_p "#{project}/solutions"
+  target = "#{project}/solutions/#{username}"
+  FileUtils.cp_r "#{project}/template", target
+  STDOUT.puts "Setup template for #{project} in #{target}"
+end
+
 desc "Run the ruby example"
 task :ruby do
   puts `ruby ruby/mergesort.rb`
@@ -48,9 +64,16 @@ namespace :ruby do
 end
 
 namespace :js do
-  desc "Run the jasmine example"
-  task :jasmine do
-    `open jasmine/SpecRunner.html`
+  namespace :jasmine do
+    desc "Setup for Jasmine work"
+    task :init do
+      init_from_template('jasmine')
+    end
+
+    desc "Run the jasmine example"
+    task :run do
+      `open jasmine/solutions/#{username}/SpecRunner.html`
+    end
   end
 end
 
